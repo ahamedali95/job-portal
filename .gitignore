@@ -5,3 +5,5 @@ coverage
 docs
 build
 ts-output
+compilation-stats.json
+*.iml
