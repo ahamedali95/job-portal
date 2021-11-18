@@ -3,7 +3,6 @@ pipeline {
 
     tools {nodejs "nodeJS@12"}
     stages {
-        state
         stage('Build') {
             steps {
                 sh 'npm install'
