@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo "Build stage is running..."
                 sh 'npm install'
                 sh 'npm run check:typings'
                 sh 'npm run lint'
@@ -14,6 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo "Tests are running..."
                 sh 'npm run test'
             }
         }

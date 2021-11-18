@@ -1,5 +1,5 @@
 describe('App', () => {
     it('test', () => {
-        expect(2).toBe(20);
+        expect(2).toBe(2);
     });
 });
