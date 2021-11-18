@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     tools {nodejs "nodeJS@12"}
+
     stages {
         stage('Build') {
             steps {
@@ -11,7 +12,7 @@ pipeline {
                 sh 'npm run build:prod'
             }
         }
-        stage('') {
+        stage('Test') {
             steps {
                 sh 'npm run test'
             }
