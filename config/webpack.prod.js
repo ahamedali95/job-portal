@@ -7,6 +7,7 @@ const sass = require("sass");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+console.log("node version", process.version)
 
 const prodConfig = {
   mode: "production",
