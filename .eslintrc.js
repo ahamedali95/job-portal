@@ -27,5 +27,8 @@ module.exports = {
       pragma: "React",
       version: "detect"
     }
+  },
+  rules: {
+    indent: [ 'error', 4 ]
   }
 };
