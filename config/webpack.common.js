@@ -4,6 +4,7 @@ const publicDirectory = path.resolve(__dirname, "../public");
 const buildDirectory = path.resolve(__dirname, "../build");
 const Webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+console.log("node version", process.version)
 
 const commonConfig = {
   entry: srcDirectory+"/index.tsx",
