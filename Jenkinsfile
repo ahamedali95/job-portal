@@ -1,10 +1,11 @@
 pipeline {
-    agent any
+    agent none
 
     tools {nodejs "nodeJS@12"}
 
     stages {
         stage('Build') {
+            agent any
             steps {
                 echo "Build stage is running..."
                 sh 'npm install'
@@ -14,14 +15,13 @@ pipeline {
             }
         }
         stage('Test') {
+            agent any
             steps {
                 echo "Tests are running..."
                 sh 'npm run test'
             }
         }
         stage('Deploy to Dev') {
-            agent none
-
             when {
                 beforeInput true
                 not {
