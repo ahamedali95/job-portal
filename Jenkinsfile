@@ -23,12 +23,6 @@ pipeline {
         }
         stage('Deploy to Dev') {
             agent any
-            when {
-                beforeInput true
-                not {
-                    branch "master"
-                }
-            }
 
             input {
                 message "Press Ok to continue"
@@ -39,19 +33,5 @@ pipeline {
                 sh 'npm run deploy:dev'
             }
         }
-        stage('Deploy to Dev') {
-                    agent any
-                    when {
-
-                            branch "master"
-
-                    }
-
-
-                    steps {
-                        echo "Deploying to Dev"
-                        sh 'npm run deploy:dev'
-                    }
-                }
     }
 }
