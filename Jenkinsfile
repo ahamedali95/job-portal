@@ -19,5 +19,11 @@ pipeline {
                 sh 'npm run test'
             }
         }
+        stage('Deploy to Dev') {
+            steps {
+                echo "Deploying to Dev"
+                sh 'npm run deploy:dev'
+            }
+        }
     }
 }
