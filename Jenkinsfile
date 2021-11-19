@@ -39,5 +39,19 @@ pipeline {
                 sh 'npm run deploy:dev'
             }
         }
+        stage('Deploy to Dev') {
+                    agent any
+                    when {
+
+                            branch "master"
+
+                    }
+
+
+                    steps {
+                        echo "Deploying to Dev"
+                        sh 'npm run deploy:dev'
+                    }
+                }
     }
 }
