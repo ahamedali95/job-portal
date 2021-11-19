@@ -21,11 +21,11 @@ pipeline {
         }
         stage('Deploy to Dev') {
             input {
-                message "Press Ok to continue"
+                message "Press Proceed to continue"
             }
 
             steps {
-                timeout(time: 30, unit: 'SECONDS')
+                echo "Deploying to Dev"
                 echo "Deploying to Dev"
                 sh 'npm run deploy:dev'
             }
