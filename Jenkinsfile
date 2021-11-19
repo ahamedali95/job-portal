@@ -1,11 +1,10 @@
 pipeline {
-    agent none
+    agent any
 
     tools {nodejs "nodeJS@12"}
 
     stages {
         stage('Build') {
-            agent any
             steps {
                 echo "Build stage is running..."
                 sh 'npm install'
@@ -15,26 +14,18 @@ pipeline {
             }
         }
         stage('Test') {
-            agent any
             steps {
                 echo "Tests are running..."
                 sh 'npm run test'
             }
         }
         stage('Deploy to Dev') {
-            agent any
-            when {
-                beforeInput true
-                not {
-                    branch "master"
-                }
-            }
-
             input {
-                message "Press Ok to continue"
+                message "Press Proceed to continue"
             }
 
             steps {
+                echo "Deploying to Dev"
                 echo "Deploying to Dev"
                 sh 'npm run deploy:dev'
             }
