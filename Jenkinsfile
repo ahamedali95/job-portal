@@ -20,13 +20,12 @@ pipeline {
             }
         }
         stage('Deploy to Dev') {
-            timeout(time: 30, unit: 'SECONDS')
-
             input {
                 message "Press Ok to continue"
             }
 
             steps {
+                timeout(time: 30, unit: 'SECONDS')
                 echo "Deploying to Dev"
                 sh 'npm run deploy:dev'
             }
