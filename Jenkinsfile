@@ -20,6 +20,19 @@ pipeline {
             }
         }
         stage('Deploy to Dev') {
+            agent none
+
+            when {
+                beforeInput true
+                not {
+                    branch "master"
+                }
+            }
+
+            input {
+                message "Press Ok to continue"
+            }
+
             steps {
                 echo "Deploying to Dev"
                 sh 'npm run deploy:dev'
