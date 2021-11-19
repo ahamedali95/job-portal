@@ -22,6 +22,7 @@ pipeline {
             }
         }
         stage('Deploy to Dev') {
+            agent any
             when {
                 beforeInput true
                 not {
