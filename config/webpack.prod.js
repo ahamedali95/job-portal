@@ -7,7 +7,7 @@ const sass = require("sass");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const PACKAGE = require('./package.json');
+const PACKAGE = require('../package.json');
 
 const prodConfig = {
   mode: "production",
@@ -45,8 +45,8 @@ const prodConfig = {
       hashDigestLength: 5
     }),
     new MiniCssExtractPlugin({
-      filename: "css/style.[contenthash].bundle.css",
-      chunkFilename: "css/style.[contenthash].css"
+      filename: `css/style.[contenthash].${PACKAGE.version}.bundle.css`,
+      chunkFilename: `css/style.[contenthash].${PACKAGE.version}.css`
     })
   ],
   optimization: {
