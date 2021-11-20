@@ -12,7 +12,7 @@
     "url": "https://github.com/ahamedali95/job-portal.git"
   },
   "author": "Ahamed Abbas",
-  "license": "ISC",
+  "license": "./LICENSE.txt",
   "bugs": {
     "url": "https://github.com/ahamedali95/job-portal/issues"
   },
