@@ -7,7 +7,7 @@ const sass = require("sass");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-console.log("node version", process.version)
+const PACKAGE = require('./package.json');
 
 const prodConfig = {
   mode: "production",
@@ -16,7 +16,7 @@ const prodConfig = {
   //achieve long-term caching to optimize load times. These ids are only subject to change if the resource has changed, making
   //it possible for browsers to retrieve the file from cache storage, rather than make a new request.
   output: {
-    filename: "js/[name].[chunkhash].bundle.js",
+    filename: `js/[name].[chunkhash].${PACKAGE.version}.bundle.js`,
   },
   module: {
     rules: [
